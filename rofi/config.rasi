@@ -1,0 +1,10 @@
+@theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
+
+configuration {
+	show-icons: true;
+
+	modi: [window,drun,combi];
+	combi-modi: [window,drun];
+
+	matching-negate-char: '!';
+}
