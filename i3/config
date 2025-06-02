@@ -2,7 +2,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-# Aliases for commonly used commands:
+# Variables for commonly used commands:
 set $refresh_i3status killall -SIGUSR1 i3status
 
 set $border_reset [tiling con_id=__focused__] border none; \
@@ -154,8 +154,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start polybar 
-exec --no-startup-id polybar
+# Restart polybar whenever i3 is (re)loaded
+exec_always killall polybar; polybar
 
 # Remove title/header bars by default on non-floating windows
 default_border none
