@@ -17,6 +17,7 @@ syntax enable
 silent! set filetype plugin indent on
 
 set termguicolors
+set background=dark
 colorscheme iceberg
 
 " --- Editor Settings ---
@@ -44,8 +45,6 @@ set noexpandtab
 
 " --- Plugin Installs ---
 call plug#begin()
-
-Plug 'tribela/vim-transparent'
 
 Plug 'tpope/vim-fugitive'
 
@@ -92,7 +91,6 @@ hi! link SpellLocal ALEHint
 " |                                Statusline                                |
 " |--------------------------------==========--------------------------------|
 
-
 function! LinterStatus() abort
 	let l:counts = ale#statusline#Count(bufnr(''))
 
@@ -118,8 +116,7 @@ function! LinterStatus() abort
 	\)
 endfunction
 
-let MyStatusLine=' %f %#Folded# %y%m %#SpecialKey#
-				\ %=%#Folded# L: %L c: %c %#SLLintColor# %{LinterStatus()} '
+let MyStatusLine=' %f %y%m %=% %p%%:%c |%#SLLintColor# %{LinterStatus()} '
 
 set laststatus=2
 set statusline=%!MyStatusLine

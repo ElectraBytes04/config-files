@@ -117,7 +117,7 @@ if test "$(ps aux | grep bash | wc -l)" -le 3; then
 fi
 
 # more aliases
-alias nvim-godot='nvim --listen 127.0.0.1:55432'
+alias nvim-godot='nvim --listen 127.0.0.1:46368'
 alias i3lock='i3lock -c 000000'
 
 export PATH=\
@@ -128,8 +128,3 @@ export PATH=\
 
 export VIMINIT="source /home/colin/data-drive/config-files/vimfiles/vimrc"
 export TERMINAL="wezterm"
-
-# Leave at end:
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [ -z "$TMUX" ]; then
-	exec tmux
-fi

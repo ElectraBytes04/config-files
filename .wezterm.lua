@@ -10,4 +10,6 @@ config.font = wezterm.font 'RobotoMono Nerd Font Mono'
 
 config.enable_tab_bar = false
 
+config.default_prog = {'/usr/bin/tmux'}
+
 return config
