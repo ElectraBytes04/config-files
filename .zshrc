@@ -29,7 +29,7 @@ export PATH=\
 "$PATH:/home/colin/.local/bin:\
 /home/colin/.local/bin/scripts"
 
-export VIMINIT="source /home/colin/data-drive/config-files/vimfiles/vimrc"
+export VIMINIT="source /home/colin/data/config-files/vimfiles/vimrc"
 export TERMINAL="wezterm"
 
 . "$HOME/.cargo/env"

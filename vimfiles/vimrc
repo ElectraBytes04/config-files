@@ -4,7 +4,7 @@
 "  |             |   |      |         | |    |   |   | |   | |
 " |||||         |||||      |           |   ||||| |   | |   | |||||
 
-set runtimepath+=$HOME/data-drive/config-files/vimfiles
+set runtimepath+=$HOME/data/config-files/vimfiles
 
 " |-------------------------------============-------------------------------|
 " |                               Vim Settings                               |
