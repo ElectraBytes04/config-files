@@ -51,7 +51,7 @@ bindsym $mod+Shift+q kill
 # Using rofi for launching programs and switching windows
 bindsym $mod+d exec rofi -show combi
 # Custom utilities menu using rofi
-bindsym $mod+u exec ". $HOME/.local/bin/scripts/rofi-utility.sh"
+bindsym $mod+u exec ". $HOME/.local/bin/misc-scripts/rofi-utility.sh"
 
 # Change focus
 bindsym $mod+h focus left
