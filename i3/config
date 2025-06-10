@@ -20,7 +20,7 @@ exec --no-startup-id xrandr --output HDMI-0 --primary &
 exec --no-startup-id xrandr --output DP-0 --auto --right-of HDMI-0 &
 
 exec_always --no-startup-id feh --bg-fill \
-"$HOME/Pictures/wallpapers/System76-Honeycomb-KateHazen.png"
+"$HOME/Pictures/wallpapers/System76-Honeycomb-by_Kate_Hazen_of_System76.png"
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
