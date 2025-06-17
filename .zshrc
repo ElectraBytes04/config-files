@@ -34,15 +34,16 @@ export TERMINAL="wezterm"
 
 . "$HOME/.cargo/env"
 
-zstyle :compinstall filename '/home/colin/.zshrc'
-
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+bg_0="%K{236}"
+fg_0="%F{202}"
+fg_1="%F{214}"
+end_0="%F{236}%f"
 
 function set-prompt()
 {
 	branch="[$(git rev-parse --abbrev-ref HEAD 2>/dev/null)]"
 
-	PROMPT="%n@%m %~ "$branch$'\n'"> "
+	PROMPT="%B$bg_0$fg_0%n@%m%f $fg_1%~%f $branch%k$end_0%b"$'\n'"> "
 	RPROMPT="%?"
 }
 
@@ -51,8 +52,13 @@ function newline()
 	echo
 }
 
+zstyle :compinstall filename '/home/colin/.zshrc'
+
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 autoload -Uz compinit
 autoload -Uz add-zsh-hook
+autoload -U colors && colors
 compinit
 add-zsh-hook precmd set-prompt
 add-zsh-hook precmd newline
