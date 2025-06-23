@@ -22,14 +22,14 @@ alias nvim-godot='nvim --listen 127.0.0.1:46368'
 alias i3lock='i3lock -c 000000'
 
 if test "$(ps aux | grep bash | wc -l)" -le 3; then
-	cat /home/colin/todo.todo
+	cat /home/colin/goals.txt
 fi
 
 export PATH=\
 "$PATH:/home/colin/.local/bin:\
 /home/colin/.local/bin/scripts"
 
-export VIMINIT="source /home/colin/data/config-files/vimfiles/vimrc"
+export VIMINIT="so ~/.vimrc"
 export TERMINAL="wezterm"
 
 . "$HOME/.cargo/env"
