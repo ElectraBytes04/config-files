@@ -173,3 +173,5 @@ default_floating_border normal
 
 # Configure gaps
 gaps inner 10
+
+for_window [class="org.wezfurlong.wezterm"] fullscreen enable

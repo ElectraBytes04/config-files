@@ -28,6 +28,9 @@ export PATH=\
 export VIMINIT="so ~/.vimrc"
 export TERMINAL="wezterm"
 
+export FZF_DEFAULT_OPTS="--tmux 80% --style full \
+	--preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+
 . "$HOME/.cargo/env"
 
 bg_0="%K{236}"
@@ -46,7 +49,7 @@ function set-prompt()
 	PROMPT+="$s_0%B$bg_0 in $fg_1%~ %f%k$e_0$sep_0"
 	PROMPT+="$s_0%B$bg_0 on $branch %k%b$e_0"
 	PROMPT+=$'\n'
-	PROMPT+="$sep_0 "
+	PROMPT+="$sep_0  "
 
 	RPROMPT="%?"
 }
@@ -55,6 +58,8 @@ function newline()
 {
 	echo
 }
+
+source <(fzf --zsh)
 
 zstyle :compinstall filename '/home/colin/.zshrc'
 

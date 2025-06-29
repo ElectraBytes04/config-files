@@ -18,7 +18,7 @@ silent! set filetype plugin indent on
 
 set termguicolors
 set background=dark
-colorscheme iceberg
+colorscheme sorbet
 
 " --- Editor Settings ---
 set number
@@ -225,7 +225,9 @@ nnoremap <localleader>v :call BrowserView()<cr>
 " /-/-/ Plugins \-\-\
 
 " --- FZF ---
-nnoremap <localleader>fz :FZF<cr> 
+nnoremap <localleader>zf :FZF<cr> 
+nnoremap <localleader>bf :Buffer<cr>
+nnoremap <localleader>lf :BLines<cr>
 
 " --- Wiki.vim ---
 nnoremap <localleader>wb :WikiLinkReturn<cr>
