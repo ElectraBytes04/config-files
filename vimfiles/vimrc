@@ -6,6 +6,7 @@
 
 set runtimepath+=$HOME/.vim
 
+
 " |-------------------------------============-------------------------------|
 " |                               Vim Settings                               |
 " |-------------------------------============-------------------------------|
@@ -19,6 +20,7 @@ silent! set filetype plugin indent on
 set termguicolors
 set background=dark
 colorscheme sorbet
+hi Normal guibg=NONE ctermbg=NONE
 
 " --- Editor Settings ---
 set number
@@ -33,6 +35,7 @@ set mouse=
 " --- Text Settings ---
 set wrap
 set textwidth=80
+
 set tabstop=6
 set shiftwidth=6
 set noexpandtab
@@ -132,16 +135,14 @@ set statusline=%!MyStatusLine
 autocmd BufNew,BufNewFile,BufRead *.wikt setlocal filetype=mediawiki
 
 augroup WikiMarkdown
-   	autocmd Filetype mediawiki,markdown set wrap
-	autocmd Filetype mediawiki,markdown set linebreak
- 	autocmd Filetype mediawiki,markdown set textwidth=80
- 	autocmd Filetype mediawiki,markdown set formatoptions+=t
- 	autocmd Filetype mediawiki,markdown set conceallevel=2
+	autocmd Filetype mediawiki,markdown setlocal conceallevel=2
  	autocmd Filetype mediawiki,markdown highlight conceal guibg=NONE
 	autocmd Filetype mediawiki,markdown let g:vim_markdown_folding_disabled=1
  	autocmd Filetype mediawiki,markdown let g:vim_markdown_math=1
  	autocmd Filetype mediawiki,markdown let g:vim_markdown_conceal=1
 augroup END
+
+autocmd BufEnter * set formatoptions+=t
 
 
 " |------------------------------===============-----------------------------|
@@ -212,6 +213,15 @@ function! CopyFileContents(source_file_path)
 	execute "1delete"
 endfunction
 
+function! FMode()
+	let l:wallpaper = "f-mode.jpg"
+	execute "!feh --bg-fill $HOME/Pictures/wallpapers/" . l:wallpaper
+endfunction
+
+function! NMode()
+	let l:wallpaper = "System76-Honeycomb-by_Kate_Hazen_of_System76.png"
+	execute "!feh --bg-fill $HOME/Pictures/wallpapers/" . l:wallpaper
+endfunction
 
 " |----------------------------------======----------------------------------|
 " |                                  Remaps                                  |
@@ -220,6 +230,9 @@ endfunction
 
 " --- Normal Vim ---
 nnoremap <localleader>v :call BrowserView()<cr>
+
+nnoremap <localleader>fm :call FMode()<cr>
+nnoremap <localleader>nm :call NMode()<cr>
 
 
 " /-/-/ Plugins \-\-\

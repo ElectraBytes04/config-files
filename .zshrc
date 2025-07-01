@@ -36,9 +36,12 @@ export FZF_DEFAULT_OPTS="--tmux 80% --style full \
 bg_0="%K{236}"
 fg_0="%F{202}"
 fg_1="%F{214}"
-s_0="%F{236}%f"
-e_0="%F{236}%f"
+
 sep_0="%F{214}%f"
+
+e_0="%F{236}%f"
+s_0="%F{236}%f"
+s_1="%F{236}%f"
 
 function set-prompt()
 {
@@ -47,11 +50,13 @@ function set-prompt()
 	PROMPT="$sep_0"
 	PROMPT+="$s_0%B$bg_0 $fg_0%n@%m %f%k%b$e_0$sep_0"
 	PROMPT+="$s_0%B$bg_0 in $fg_1%~ %f%k$e_0$sep_0"
-	PROMPT+="$s_0%B$bg_0 on $branch %k%b$e_0"
+	PROMPT+="$s_0%B$bg_0 on $fg_1$branch%f %k%b$e_0 "
+	PROMPT+="$s_1$bg_0%?%k$e_0"
+
 	PROMPT+=$'\n'
 	PROMPT+="$sep_0  "
 
-	RPROMPT="%?"
+	RPROMPT=""
 }
 
 function newline()
