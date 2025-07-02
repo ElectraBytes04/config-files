@@ -17,7 +17,7 @@ alias ls='xplr'
 alias nvim-godot='nvim --listen 127.0.0.1:46368'
 alias i3lock='i3lock -c 000000'
 
-alias sleep='\
+alias hibernate='\
 	echo "Good Night!"; \
 	sudo systemctl hibernate \
 '
