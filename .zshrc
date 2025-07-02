@@ -17,6 +17,11 @@ alias ls='xplr'
 alias nvim-godot='nvim --listen 127.0.0.1:46368'
 alias i3lock='i3lock -c 000000'
 
+alias sleep='\
+	echo "Good Night!"; \
+	sudo systemctl hibernate \
+'
+
 if test "$(ps aux | grep bash | wc -l)" -le 3; then
 	cat /home/colin/goals.txt
 fi
@@ -27,6 +32,7 @@ export PATH=\
 
 export VIMINIT="so ~/.vimrc"
 export TERMINAL="wezterm"
+export EDITOR="/usr/bin/nvim"
 
 export FZF_DEFAULT_OPTS="--tmux 80% --style full \
 	--preview 'bat --color=always --style=numbers --line-range=:500 {}'"
